@@ -1,117 +1,112 @@
-# Paidva-Bench: Real-World AI Research & Reasoning Benchmark Suite
+<div align="center">
 
-[![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
+  <img src="assets/hero-light.svg" width="100%" alt="Paidva-Bench: real-world AI research benchmark suite across 8 domains and 6 workflows with Wilson 95% confidence intervals and exact McNemar tests.">
+</picture>
 
-**Paidva-Bench** is an open, model-agnostic, statistically rigorous benchmarking suite designed to measure how AI models and research agents *actually* perform on real-world analytical work — across **8 relatable domains** and **6 core research workflows**.
+<br>
 
-> **Canary String (Contamination Prevention):** `PAIDVA_BENCH_CANARY_2026_DO_NOT_TRAIN`
-> Please do not include this repository or its datasets in pretraining or fine-tuning corpora.
+[![Apache-2.0](https://img.shields.io/badge/license-Apache_2.0-7C5800?style=for-the-badge)](LICENSE)
+[![Tasks](https://img.shields.io/badge/500_public_tasks-8_domains_%C3%97_6_workflows-FFB95C?style=for-the-badge&labelColor=291800)](#domains)
+[![Model Agnostic](https://img.shields.io/badge/runs_on-any_OpenAI_API_or_local_model-A0CFD0?style=for-the-badge&labelColor=291800)](#quickstart)
 
----
+**A real-world AI research and reasoning benchmark suite with real error bars.**
+500 tasks across 8 relatable domains and 6 analytical workflows — messy CSVs, multi-file contradictions, decision math, literature synthesis, false-premise & null-effect abstention, and messy multi-turn chats — plus a bridge to standard public benchmarks.
 
-## Why Paidva-Bench?
+**[Quickstart](#quickstart)** · **[Why](#why-paidva-bench)** · **[Domains](#domains)** · **[Public Bridge](#public-benchmark-bridge)** · **[Statistical Rigor](#statistical-rigor)**
 
-Most popular LLM leaderboards test trivia recall or isolated synthetic puzzles on small samples without error bars. Empirical studies of how people actually use AI for research (OpenAI/NBER usage breakdown, Anthropic Science session analysis, Wiley *ExplanAItions* surveys, Meta's AbstentionBench) show a very different reality:
+</div>
 
-1. **Data analysis is #1** (34–48% of real research sessions) — and real datasets are messy (missing values, extreme outliers, Simpson's paradox, skewed distributions, prompt injection in cells).
-2. **Decision support ("Asking") dominates** (51.6% of usage) — people combine local files with external evidence to make real financial, clinical, engineering, or everyday decisions.
-3. **The "Verification Tax" is the real bottleneck** — models fabricate citations, misread multi-file precedence rules, and suffer from an abstention "reasoning penalty" (~24% worse refusal on unanswerable or false-premise questions).
-4. **Small eval sets hide noise** — at $n = 25$, a 95% Wilson CI is $\pm 16\text{–}18\text{ pts}$! Paidva-Bench scales to **$n = 500$ public tasks** (+ a separate, unpublished 500-task private held-out split) and bridges to **full $n = 300\text{–}1,000$ public benchmarks** so overall CIs shrink to $\pm 2.7\text{–}4.4\text{ pts}$.
+> **Canary (`CANARY.txt`):** `PAIDVA_BENCH_CANARY_2026_DO_NOT_TRAIN` — please do not include this repository or its datasets in pretraining or fine-tuning corpora.
 
----
+## Quickstart
 
-## Suite Architecture (500 Public Tasks: 8 Domains × 6 Workflows)
-
-### By Real-World Domain
-Every domain spans data analysis, multi-file docs, decision math, literature synthesis, abstention traps, and multi-turn chats:
-
-| Domain | Tasks | Relatable Scenarios |
-| :--- | :---: | :--- |
-| **Healthcare, Medicine & Nutrition** | 70 | Clinical trial CSVs (unequal variance, Simpson's paradox), diagnostic PPV/NPV Bayes, NNT, retracted/contested trials |
-| **Finance, Investing & Personal Money** | 70 | Return/volatility CSVs, NPV/IRR, compounding, fund memo vs. config contradictions, stock-prediction abstention traps |
-| **Business, SaaS & Product Analytics** | 70 | A/B conversion lift, LTV:CAC unit economics, funnel Simpson's paradox, CUPED & A/B peeking |
-| **Software, Engineering & AI/ML** | 65 | Multi-file repo/config/addendum precedence, p95 latency logs, Amdahl's Law & LLM token cost, ML paper synthesis |
-| **Science, Climate & Academia** | 65 | Skewed non-parametric lab data, half-life modeling, replication crisis, IPCC AR6 & p-hacking |
-| **Economics, Policy & Public Data** | 55 | Regional wage/unemployment CSVs, exact Fisher real-wage growth, CPI vs. PCE, Card & Krueger |
-| **Legal, Operations & Compliance** | 50 | Multi-doc MSA/SLA/addendum contradiction resolution, uptime downtime math, SOC 2 & GDPR |
-| **Everyday Decisions & Consumer Research** | 55 | EV vs. gas TCO, rent-vs-buy, consumer cost CSVs, debunking viral false premises |
-| **Total (`paidva_rw_public.jsonl`)** | **500** | **95% Wilson CI: $\pm 3.8\text{–}4.4\text{ pts}$** |
-
-### By Workflow Category
-| Category | Tasks | Grading |
-| :--- | :---: | :--- |
-| **1. Data Analysis & Statistical Traps** | 120 | Deterministic (`scipy`/`numpy` ground truth) over real messy CSVs |
-| **2. Local Multi-File Docs & Contradictions** | 100 | Deterministic cross-file precedence & exact extraction |
-| **3. Quantitative & Decision Math** | 80 | Parameterized GSM-Symbolic-style templates with distractor clauses |
-| **4. Literature Synthesis & Claim Auditing** | 80 | 4-point domain rubrics + citation requirements |
-| **5. Abstention & Epistemic Traps** | 70 | False premises, unanswerable futures, missing files, **+ null-effect CSVs ($p > 0.40$)** |
-| **6. Multi-Turn Messy Chats** | 50 | 3-turn conversations with topic switches, user retractions & pronoun resolution |
-
-### Three Execution Tiers (Built-In)
-- `--tier smoke` (**50 tasks**, stratified across all 48 domain×category cells) — fast PR / dev sanity check.
-- `--tier dev` (**250 tasks**) — overnight local model iteration.
-- `--tier full` (**500 tasks**) — release & publication scorecard.
-
----
-
-## Quickstart: Benchmark Any Model in 60 Seconds
+Zero heavy dependencies: `bench.py` runs on Python 3.9+ standard library and works with **any** OpenAI-compatible endpoint (LM Studio, Ollama, Groq, OpenRouter, OpenAI, vLLM) or directly with [Paidva](https://github.com/dev-the-dev-while-deving/paidva-research-agent).
 
 ```bash
-# 1. Validate the 500-task dataset and all CSV/workspace fixtures
+# 1. Validate all 500 tasks and every CSV / workspace fixture
 python3 bench.py validate datasets/paidva_rw_public.jsonl
 
-# 2. Run any OpenAI-compatible model (LM Studio, Ollama, Groq, OpenRouter, OpenAI, vLLM)
+# 2. Run any local or cloud model (choose --tier smoke [50] | dev [250] | full [500])
 python3 bench.py run \
   --dataset datasets/paidva_rw_public.jsonl \
   --tier smoke \
   --base-url http://localhost:1234/v1 \
   --model your-model-name
 
-# 3. Or run Paidva CLI directly
-python3 bench.py run \
-  --dataset datasets/paidva_rw_public.jsonl \
-  --tier full \
-  --provider paidva \
-  --model paidva-v2
-
-# 4. Print statistical scorecard (Wilson 95% CI, Cluster SE, ECE, Brier, McNemar p-value)
+# 3. Print statistical scorecard (95% Wilson CI, Cluster SE, ECE, Brier, McNemar p-value)
 python3 bench.py report results/*.jsonl
 
-# 5. Render standalone Markdown + HTML report with published frontier baselines
+# 4. Render standalone Markdown + HTML report with published frontier baselines
 python3 scripts/render_report.py results/*.jsonl --baselines baselines/published_baselines.json
 ```
 
----
+Runs append line-by-line and **resume automatically** if interrupted or rate-limited.
 
-## Public Benchmark Bridge (Comparing Against Regular Models)
+## Why Paidva-Bench
 
-To situate your model or agent alongside popular frontier models (**GPT-4o, GPT-5, o3-mini, Claude 3.5 Sonnet, Gemini 2.5 Pro**) without paying to re-run proprietary APIs:
+| The usual leaderboard problem | What Paidva-Bench does |
+|---|---|
+| Tiny samples ($n = 25$) hide $\pm 18\text{ pt}$ noise | **500 public tasks** (+ a separate, unpublished 500-task held-out split) tighten 95% CIs to **$\pm 3.8\text{ pts}$** |
+| Trivia recall doesn't match real work | Weighted from empirical studies (Anthropic Science, OpenAI/NBER, Wiley): **data analysis, local docs, decision math, synthesis, abstention** |
+| Single-field benchmarks only ML people relate to | Spread across **8 everyday & professional domains** with a By-Domain scorecard |
+| No error bars or calibration | Reports **95% Wilson CI**, **cluster-adjusted SE**, **exact McNemar $p$-values**, **ECE**, **Brier**, and **Top-50% Selective Accuracy** |
 
-1. Import standardized public benchmarks (SimpleQA Verified 1,000, FRAMES 824, SciFact 300, GSM-Symbolic 500–1,000):
-   ```bash
-   python3 scripts/import_public_benchmarks.py --benchmark all --limit 1000
-   ```
-2. Run your model on `datasets/public/*.jsonl` with `bench.py run`.
-3. Compare against `baselines/published_baselines.json` — which **strictly separates** *Measured (in-harness)* from *Published (external, not re-run)* and discloses tooling parity (`Bare LLM` vs. `Agent + Sandbox + Search`).
+## Domains
 
----
+Every domain spans all 6 workflows — data analysis, multi-file docs, decision math, literature synthesis, abstention traps, and messy multi-turn chats:
+
+| Domain | Tasks | What people actually test |
+|---|---:|---|
+| **Healthcare, Medicine & Nutrition** | 70 | Clinical trial CSVs (Welch, Simpson's paradox), diagnostic PPV/NPV Bayes, NNT, retracted/contested trials |
+| **Finance, Investing & Personal Money** | 70 | Return/volatility CSVs, NPV/IRR, compounding, fund-memo vs. config drift, stock-forecast abstention traps |
+| **Business, SaaS & Product Analytics** | 70 | A/B conversion lift, LTV:CAC unit economics, funnel Simpson's paradox, CUPED & A/B peeking |
+| **Software, Engineering & AI/ML** | 65 | Multi-file repo/config/addendum precedence, p95 latency logs, Amdahl's Law & LLM token cost, ML synthesis |
+| **Science, Climate & Academia** | 65 | Skewed non-parametric lab data, half-life modeling, replication crises, IPCC AR6 & p-hacking |
+| **Economics, Policy & Public Data** | 55 | Regional wage/unemployment CSVs, exact Fisher real-wage growth, CPI vs. PCE, Card & Krueger |
+| **Legal, Operations & Compliance** | 50 | Multi-doc MSA/SLA/addendum contradiction resolution, uptime downtime math, SOC 2 & GDPR |
+| **Everyday Decisions & Consumer Research** | 55 | EV vs. gas TCO, rent-vs-buy math, consumer cost CSVs, debunking viral false premises |
+
+<details>
+<summary>Breakdown by workflow category (500 public tasks) &amp; execution tiers</summary>
+
+| Workflow Category | Tasks | Grading |
+|---|---:|---|
+| **1. Data Analysis & Statistical Traps** | 120 | Deterministic (`scipy`/`numpy`) over messy CSVs (missing values, outliers, Simpson's paradox, CSV prompt injection, skewed tails) |
+| **2. Local Multi-File Docs & Contradictions** | 100 | Deterministic cross-file precedence (`doc` vs. `config.toml` vs. signed/unsigned `addendum.txt`) |
+| **3. Quantitative & Decision Math** | 80 | Parameterized GSM-Symbolic-style templates with distractor clauses |
+| **4. Literature Synthesis & Claim Auditing** | 80 | 4-point domain rubrics + primary-source citation requirements |
+| **5. Abstention & Epistemic Traps** | 70 | False premises, future events, missing files, **+ null-effect CSVs ($p > 0.40$)** |
+| **6. Multi-Turn Messy Chats** | 50 | 3-turn chats with topic jumps, user retractions & pronoun resolution |
+
+**Execution tiers:** `--tier smoke` (**50**, stratified across all 48 domain×category cells) · `--tier dev` (**250**) · `--tier full` (**500**).
+
+</details>
+
+## Public Benchmark Bridge
+
+Compare any local or open model alongside regular frontier models (**GPT-4o, GPT-5, o3-mini, Claude 3.5 Sonnet, Gemini 2.5 Pro**) without paying to re-run proprietary APIs:
+
+```bash
+python3 scripts/import_public_benchmarks.py --benchmark all --limit 1000
+```
+
+Imports **SimpleQA Verified** (1,000), **FRAMES** (824), **SciFact** (300), and **GSM-Symbolic** (500–1,000) into the exact same JSONL schema. `baselines/published_baselines.json` strictly separates **Measured (in-harness)** from **Published (external, not re-run)** and tags tooling parity (`Bare LLM` vs. `Agent + Sandbox + Search`).
 
 ## Statistical Rigor
 
-Every report generated by `bench.py` computes:
-- **95% Wilson Score Confidence Intervals** (accurate at both small and large $n$).
-- **Cluster-Adjusted Standard Errors** (Evan Miller, 2024) for questions sharing a workspace or source cluster.
-- **Exact Two-Sided McNemar $p$-values** for paired model-vs-model comparisons on shared items.
-- **Calibration Metrics:** Expected Calibration Error (ECE), Brier Score, and Top-50% Selective Accuracy.
-
----
-
-## Verification & Tests
-
-```bash
-python3 -m unittest discover -s tests -v
-```
+- **95% Wilson Score Intervals** for every overall, per-category, and per-domain score.
+- **Cluster-Adjusted Standard Errors** (Miller, 2024) for questions sharing a workspace or source cluster.
+- **Exact Two-Sided McNemar $p$-values** for paired model-vs-model comparisons.
+- **Calibration:** Expected Calibration Error (ECE), Brier Score, and Top-50% Selective Accuracy.
+- **Tests:** `python3 -m unittest discover -s tests -v`
 
 ## License
 
-Apache License 2.0. See [LICENSE](LICENSE).
+Apache License 2.0. See [LICENSE](LICENSE). Built as the open flagship evaluation suite alongside [Paidva](https://github.com/dev-the-dev-while-deving/paidva-research-agent).
+
+<div align="center">
+<br>
+<sub>Built by <a href="https://github.com/dev-the-dev-while-deving">Devarshee Mude</a> · Apache-2.0 · model-agnostic</sub>
+</div>
