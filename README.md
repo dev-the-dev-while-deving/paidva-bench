@@ -7,9 +7,9 @@
 
 <br>
 
-[![Apache-2.0](https://img.shields.io/badge/license-Apache_2.0-7C5800?style=for-the-badge)](LICENSE)
-[![Tasks](https://img.shields.io/badge/500_public_tasks-8_domains_%C3%97_6_workflows-FFB95C?style=for-the-badge&labelColor=291800)](#domains)
-[![Model Agnostic](https://img.shields.io/badge/runs_on-any_OpenAI_API_or_local_model-A0CFD0?style=for-the-badge&labelColor=291800)](#quickstart)
+[![Apache-2.0](https://img.shields.io/badge/license-Apache_2.0-4F378B?style=for-the-badge)](LICENSE)
+[![Tasks](https://img.shields.io/badge/500_public_tasks-8_domains_%C3%97_6_workflows-D0BCFF?style=for-the-badge&labelColor=21005D)](#domains)
+[![Model Agnostic](https://img.shields.io/badge/runs_on-any_OpenAI_API_or_local_model-80DEEA?style=for-the-badge&labelColor=21005D)](#quickstart)
 
 **A real-world AI research and reasoning benchmark suite with real error bars.**
 500 tasks across 8 relatable domains and 6 analytical workflows — messy CSVs, multi-file contradictions, decision math, literature synthesis, false-premise & null-effect abstention, and messy multi-turn chats — plus a bridge to standard public benchmarks.
