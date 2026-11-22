@@ -1,0 +1,6 @@
+# Operational Configuration — REV-2025-355
+organization = "CivicEcon Institute"
+region = "EU-West"
+effective_threshold_cap = 53
+adjustment_rate_pct = 5.39
+audit_mode = "strict"

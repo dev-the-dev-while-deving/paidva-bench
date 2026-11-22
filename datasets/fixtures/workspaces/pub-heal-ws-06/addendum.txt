@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2025-295
+Status: DRAFT — UNSIGNED (NOT EFFECTIVE)
+Proposed Threshold Cap: 106
+Notes: Reviewed by M. Alvarez for US-East.

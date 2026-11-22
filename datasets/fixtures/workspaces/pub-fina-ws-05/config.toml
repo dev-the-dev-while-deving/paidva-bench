@@ -1,0 +1,6 @@
+# Operational Configuration — REV-2024-805
+organization = "Apex Capital Research"
+region = "APAC-South"
+effective_threshold_cap = 83
+adjustment_rate_pct = 6.37
+audit_mode = "strict"

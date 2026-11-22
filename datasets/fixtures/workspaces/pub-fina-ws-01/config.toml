@@ -1,0 +1,6 @@
+# Operational Configuration — REV-2025-961
+organization = "Apex Capital Research"
+region = "CA-Central"
+effective_threshold_cap = 26
+adjustment_rate_pct = 4.82
+audit_mode = "strict"

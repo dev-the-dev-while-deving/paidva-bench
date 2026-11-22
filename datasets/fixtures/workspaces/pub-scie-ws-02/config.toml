@@ -1,0 +1,6 @@
+# Operational Configuration — REV-2024-999
+organization = "EarthLab Consortium"
+region = "Nordics"
+effective_threshold_cap = 73
+adjustment_rate_pct = 1.21
+audit_mode = "strict"

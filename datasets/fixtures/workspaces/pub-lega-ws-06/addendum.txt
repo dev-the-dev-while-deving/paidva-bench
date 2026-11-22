@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2026-710
+Status: SIGNED AND EFFECTIVE
+Proposed Threshold Cap: 92
+Notes: Reviewed by K. Lindqvist for US-East.

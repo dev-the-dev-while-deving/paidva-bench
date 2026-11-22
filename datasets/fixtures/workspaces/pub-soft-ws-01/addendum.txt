@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2025-122
+Status: DRAFT — UNSIGNED (NOT EFFECTIVE)
+Proposed Threshold Cap: 49
+Notes: Reviewed by R. Okafor for US-East.

@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.DS_Store
+results/*.jsonl
+REPORT.md
+report.html
+datasets/public/
+*heldout*
+*private*
+.env

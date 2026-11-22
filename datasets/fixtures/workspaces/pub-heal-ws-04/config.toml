@@ -1,0 +1,6 @@
+# Operational Configuration — REV-2024-344
+organization = "MedCore Trial Group"
+region = "US-East"
+effective_threshold_cap = 93
+adjustment_rate_pct = 1.32
+audit_mode = "strict"

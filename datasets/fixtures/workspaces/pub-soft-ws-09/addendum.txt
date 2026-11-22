@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2025-460
+Status: DRAFT — UNSIGNED (NOT EFFECTIVE)
+Proposed Threshold Cap: 35
+Notes: Reviewed by S. Nakamura for EU-West.

@@ -1,0 +1,6 @@
+# Operational Configuration — REV-2026-753
+organization = "Apex Capital Research"
+region = "US-East"
+effective_threshold_cap = 43
+adjustment_rate_pct = 1.61
+audit_mode = "strict"

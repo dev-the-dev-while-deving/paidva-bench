@@ -1,0 +1,6 @@
+# Operational Configuration — REV-2024-962
+organization = "CoreInfra Systems"
+region = "CA-Central"
+effective_threshold_cap = 67
+adjustment_rate_pct = 6.18
+audit_mode = "strict"

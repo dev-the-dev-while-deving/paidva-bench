@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2024-962
+Status: DRAFT — UNSIGNED (NOT EFFECTIVE)
+Proposed Threshold Cap: 70
+Notes: Reviewed by T. Chen for CA-Central.

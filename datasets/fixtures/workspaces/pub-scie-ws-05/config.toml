@@ -1,0 +1,6 @@
+# Operational Configuration — REV-2026-881
+organization = "EarthLab Consortium"
+region = "CA-Central"
+effective_threshold_cap = 93
+adjustment_rate_pct = 1.32
+audit_mode = "strict"

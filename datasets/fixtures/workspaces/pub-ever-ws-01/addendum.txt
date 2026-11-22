@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2026-876
+Status: SIGNED AND EFFECTIVE
+Proposed Threshold Cap: 18
+Notes: Reviewed by Dr. Patel for Nordics.

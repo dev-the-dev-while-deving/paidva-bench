@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2025-502
+Status: SIGNED AND EFFECTIVE
+Proposed Threshold Cap: 39
+Notes: Reviewed by K. Lindqvist for CA-Central.

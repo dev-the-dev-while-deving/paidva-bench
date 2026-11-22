@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2026-124
+Status: SIGNED AND EFFECTIVE
+Proposed Threshold Cap: 87
+Notes: Reviewed by T. Chen for US-East.

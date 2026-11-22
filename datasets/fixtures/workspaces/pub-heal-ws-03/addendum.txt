@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2026-457
+Status: SIGNED AND EFFECTIVE
+Proposed Threshold Cap: 86
+Notes: Reviewed by Dr. Patel for APAC-South.

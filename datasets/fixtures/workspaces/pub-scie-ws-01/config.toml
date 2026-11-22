@@ -1,0 +1,6 @@
+# Operational Configuration — REV-2026-267
+organization = "EarthLab Consortium"
+region = "APAC-South"
+effective_threshold_cap = 47
+adjustment_rate_pct = 2.39
+audit_mode = "strict"

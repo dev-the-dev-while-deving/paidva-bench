@@ -1,0 +1,6 @@
+# Operational Configuration — REV-2024-441
+organization = "CloudPulse Analytics"
+region = "APAC-South"
+effective_threshold_cap = 72
+adjustment_rate_pct = 1.53
+audit_mode = "strict"

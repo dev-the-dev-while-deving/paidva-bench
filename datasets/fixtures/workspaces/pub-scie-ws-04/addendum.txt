@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2025-508
+Status: SIGNED AND EFFECTIVE
+Proposed Threshold Cap: 81
+Notes: Reviewed by S. Nakamura for Nordics.

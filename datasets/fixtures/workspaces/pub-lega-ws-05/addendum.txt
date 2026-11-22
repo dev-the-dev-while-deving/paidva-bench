@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2026-641
+Status: SIGNED AND EFFECTIVE
+Proposed Threshold Cap: 81
+Notes: Reviewed by S. Nakamura for CA-Central.

@@ -1,0 +1,6 @@
+# Operational Configuration — REV-2025-400
+organization = "LexOps Governance"
+region = "APAC-South"
+effective_threshold_cap = 30
+adjustment_rate_pct = 7.85
+audit_mode = "strict"

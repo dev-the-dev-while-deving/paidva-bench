@@ -1,0 +1,6 @@
+# Operational Configuration — REV-2026-153
+organization = "CivicEcon Institute"
+region = "CA-Central"
+effective_threshold_cap = 71
+adjustment_rate_pct = 3.1
+audit_mode = "strict"

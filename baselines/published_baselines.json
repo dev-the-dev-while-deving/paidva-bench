@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "note": "Published external benchmark scores collected from official papers, model cards, and benchmark repositories. These are NOT re-run in the Paidva-Bench harness and must always be displayed separately from measured runs with tooling parity disclosed. Entries with null indicate no official comparable published number was verified.",
+  "last_verified": "2026-11-22",
+  "benchmarks": {
+    "simpleqa_verified": {
+      "name": "SimpleQA Verified",
+      "full_n": 1000,
+      "metric": "F1 / Accuracy (%)",
+      "paper_url": "https://arxiv.org/abs/2509.07968",
+      "description": "Cleaned 1,000-prompt factual accuracy, calibration, and abstention benchmark (Google DeepMind / Google Research, 2025)."
+    },
+    "frames": {
+      "name": "FRAMES",
+      "full_n": 824,
+      "metric": "Accuracy (%)",
+      "paper_url": "https://arxiv.org/abs/2409.12941",
+      "description": "Multi-hop factuality, retrieval, and cross-document reasoning benchmark (Google, 2024)."
+    },
+    "abstention_bench": {
+      "name": "AbstentionBench",
+      "full_n": 35000,
+      "metric": "Abstention Recall / F1 (%)",
+      "paper_url": "https://arxiv.org/abs/2506.09038",
+      "description": "Selective abstention across 20 datasets (unanswerable, false premise, underspecified, outdated; Meta AI, 2025)."
+    },
+    "scifact": {
+      "name": "SciFact",
+      "full_n": 300,
+      "metric": "Label Accuracy / F1 (%)",
+      "paper_url": "https://arxiv.org/abs/2004.14974",
+      "description": "Scientific claim verification (Support / Refute / Not Enough Info) with evidence rationales (AI2)."
+    },
+    "gsm_symbolic": {
+      "name": "GSM-Symbolic (P1/P2)",
+      "full_n": 1000,
+      "metric": "Accuracy (%)",
+      "paper_url": "https://arxiv.org/abs/2410.05229",
+      "description": "Math reasoning robustness under numeric and irrelevant-clause perturbations (Apple, 2024)."
+    }
+  },
+  "models": [
+    {
+      "model": "Gemini 2.5 Pro",
+      "provider": "Google",
+      "tooling_mode": "Bare LLM (parametric / no sandbox)",
+      "cost_tier": "Paid API",
+      "scores": {
+        "simpleqa_verified": {"value": 55.6, "unit": "F1 %", "source": "https://arxiv.org/abs/2509.07968", "note": "Published snapshot in SimpleQA Verified"},
+        "frames": {"value": null, "unit": "%", "source": "", "note": "Add official verified figure when cited"},
+        "abstention_bench": {"value": null, "unit": "%", "source": "https://arxiv.org/abs/2506.09038", "note": "Paper reports ~24% reasoning penalty across reasoning models"},
+        "scifact": {"value": null, "unit": "%", "source": "", "note": ""},
+        "gsm_symbolic": {"value": null, "unit": "%", "source": "", "note": ""}
+      }
+    },
+    {
+      "model": "GPT-5",
+      "provider": "OpenAI",
+      "tooling_mode": "Bare LLM (parametric / no sandbox)",
+      "cost_tier": "Paid API",
+      "scores": {
+        "simpleqa_verified": {"value": 52.3, "unit": "F1 %", "source": "https://arxiv.org/abs/2509.07968", "note": "Published snapshot in SimpleQA Verified"},
+        "frames": {"value": null, "unit": "%", "source": "", "note": ""},
+        "abstention_bench": {"value": null, "unit": "%", "source": "", "note": ""},
+        "scifact": {"value": null, "unit": "%", "source": "", "note": ""},
+        "gsm_symbolic": {"value": null, "unit": "%", "source": "", "note": ""}
+      }
+    },
+    {
+      "model": "GPT-4o",
+      "provider": "OpenAI",
+      "tooling_mode": "Bare LLM (no search / no sandbox)",
+      "cost_tier": "Paid API",
+      "scores": {
+        "simpleqa_verified": {"value": 38.2, "unit": "Acc % (orig SimpleQA)", "source": "https://arxiv.org/abs/2411.04368", "note": "Original SimpleQA score; lower on Verified"},
+        "frames": {"value": 40.0, "unit": "Acc % (no-RAG baseline)", "source": "https://arxiv.org/abs/2409.12941", "note": "Baseline without multi-step retrieval; ~72.9% with multi-step RAG in paper"},
+        "abstention_bench": {"value": null, "unit": "%", "source": "https://arxiv.org/abs/2506.09038", "note": "Evaluated in Kirichenko et al. 2025"},
+        "scifact": {"value": null, "unit": "%", "source": "", "note": ""},
+        "gsm_symbolic": {"value": 92.0, "unit": "Acc % (GSM-Symbolic)", "source": "https://arxiv.org/abs/2410.05229", "note": "Drops sharply on P2 irrelevant-clause variants"}
+      }
+    },
+    {
+      "model": "Claude 3.5 Sonnet",
+      "provider": "Anthropic",
+      "tooling_mode": "Bare LLM (no search / no sandbox)",
+      "cost_tier": "Paid API",
+      "scores": {
+        "simpleqa_verified": {"value": 28.9, "unit": "Acc % (orig SimpleQA)", "source": "https://arxiv.org/abs/2411.04368", "note": "Original SimpleQA score"},
+        "frames": {"value": null, "unit": "%", "source": "", "note": ""},
+        "abstention_bench": {"value": null, "unit": "%", "source": "https://arxiv.org/abs/2506.09038", "note": ""},
+        "scifact": {"value": null, "unit": "%", "source": "", "note": ""},
+        "gsm_symbolic": {"value": null, "unit": "%", "source": "", "note": ""}
+      }
+    },
+    {
+      "model": "o3-mini",
+      "provider": "OpenAI",
+      "tooling_mode": "Bare Reasoning LLM",
+      "cost_tier": "Paid API",
+      "scores": {
+        "simpleqa_verified": {"value": 13.8, "unit": "Acc % (orig SimpleQA)", "source": "https://openai.com/index/openai-o3-mini/", "note": "High overconfidence on unknown facts"},
+        "frames": {"value": null, "unit": "%", "source": "", "note": ""},
+        "abstention_bench": {"value": null, "unit": "%", "source": "https://arxiv.org/abs/2506.09038", "note": "Subject to reasoning abstention penalty"},
+        "scifact": {"value": null, "unit": "%", "source": "", "note": ""},
+        "gsm_symbolic": {"value": null, "unit": "%", "source": "", "note": ""}
+      }
+    }
+  ]
+}

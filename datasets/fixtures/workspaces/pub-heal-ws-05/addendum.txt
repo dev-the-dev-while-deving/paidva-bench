@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2024-701
+Status: SIGNED AND EFFECTIVE
+Proposed Threshold Cap: 34
+Notes: Reviewed by K. Lindqvist for US-East.

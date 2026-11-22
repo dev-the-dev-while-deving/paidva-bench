@@ -1,0 +1,6 @@
+# Operational Configuration — REV-2025-100
+organization = "CoreInfra Systems"
+region = "EU-West"
+effective_threshold_cap = 13
+adjustment_rate_pct = 8.1
+audit_mode = "strict"

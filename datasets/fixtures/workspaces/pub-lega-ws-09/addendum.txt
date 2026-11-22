@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2025-261
+Status: SIGNED AND EFFECTIVE
+Proposed Threshold Cap: 65
+Notes: Reviewed by K. Lindqvist for APAC-South.

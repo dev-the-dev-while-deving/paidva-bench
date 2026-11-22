@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2026-720
+Status: DRAFT — UNSIGNED (NOT EFFECTIVE)
+Proposed Threshold Cap: 35
+Notes: Reviewed by M. Alvarez for US-East.

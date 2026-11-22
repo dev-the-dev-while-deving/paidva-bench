@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2026-888
+Status: SIGNED AND EFFECTIVE
+Proposed Threshold Cap: 44
+Notes: Reviewed by T. Chen for Nordics.

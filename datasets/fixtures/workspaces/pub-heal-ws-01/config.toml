@@ -1,0 +1,6 @@
+# Operational Configuration — REV-2026-717
+organization = "MedCore Trial Group"
+region = "CA-Central"
+effective_threshold_cap = 31
+adjustment_rate_pct = 8.17
+audit_mode = "strict"

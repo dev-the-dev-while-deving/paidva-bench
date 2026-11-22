@@ -1,0 +1,6 @@
+# Operational Configuration — REV-2026-641
+organization = "LexOps Governance"
+region = "CA-Central"
+effective_threshold_cap = 75
+adjustment_rate_pct = 7.84
+audit_mode = "strict"

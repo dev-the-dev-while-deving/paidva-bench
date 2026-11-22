@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2026-881
+Status: DRAFT — UNSIGNED (NOT EFFECTIVE)
+Proposed Threshold Cap: 99
+Notes: Reviewed by T. Chen for CA-Central.

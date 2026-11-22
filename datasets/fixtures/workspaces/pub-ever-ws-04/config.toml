@@ -1,0 +1,6 @@
+# Operational Configuration — REV-2024-503
+organization = "ConsumerCheck Lab"
+region = "APAC-South"
+effective_threshold_cap = 89
+adjustment_rate_pct = 1.9
+audit_mode = "strict"

@@ -1,0 +1,6 @@
+# Operational Configuration — REV-2026-505
+organization = "LexOps Governance"
+region = "US-East"
+effective_threshold_cap = 103
+adjustment_rate_pct = 3.2
+audit_mode = "strict"

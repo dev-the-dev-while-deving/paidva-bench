@@ -1,0 +1,6 @@
+# Operational Configuration — REV-2026-876
+organization = "ConsumerCheck Lab"
+region = "Nordics"
+effective_threshold_cap = 22
+adjustment_rate_pct = 2.87
+audit_mode = "strict"

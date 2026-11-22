@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2025-687
+Status: SIGNED AND EFFECTIVE
+Proposed Threshold Cap: 49
+Notes: Reviewed by S. Nakamura for CA-Central.

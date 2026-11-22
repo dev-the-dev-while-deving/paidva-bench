@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2025-961
+Status: SIGNED AND EFFECTIVE
+Proposed Threshold Cap: 32
+Notes: Reviewed by R. Okafor for CA-Central.

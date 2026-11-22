@@ -1,0 +1,6 @@
+# Operational Configuration — REV-2026-457
+organization = "MedCore Trial Group"
+region = "APAC-South"
+effective_threshold_cap = 83
+adjustment_rate_pct = 6.56
+audit_mode = "strict"

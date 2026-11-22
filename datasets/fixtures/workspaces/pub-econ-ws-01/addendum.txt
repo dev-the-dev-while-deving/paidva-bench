@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2026-153
+Status: DRAFT — UNSIGNED (NOT EFFECTIVE)
+Proposed Threshold Cap: 74
+Notes: Reviewed by S. Nakamura for CA-Central.

@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2026-267
+Status: DRAFT — UNSIGNED (NOT EFFECTIVE)
+Proposed Threshold Cap: 43
+Notes: Reviewed by T. Chen for APAC-South.

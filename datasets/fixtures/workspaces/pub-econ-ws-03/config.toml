@@ -1,0 +1,6 @@
+# Operational Configuration — REV-2026-778
+organization = "CivicEcon Institute"
+region = "US-East"
+effective_threshold_cap = 49
+adjustment_rate_pct = 3.82
+audit_mode = "strict"

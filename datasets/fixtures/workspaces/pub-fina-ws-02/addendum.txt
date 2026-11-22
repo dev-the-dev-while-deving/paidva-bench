@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2024-625
+Status: DRAFT — UNSIGNED (NOT EFFECTIVE)
+Proposed Threshold Cap: 44
+Notes: Reviewed by R. Okafor for US-East.

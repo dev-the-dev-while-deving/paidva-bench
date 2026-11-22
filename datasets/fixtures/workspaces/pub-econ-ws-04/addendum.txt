@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2025-355
+Status: DRAFT — UNSIGNED (NOT EFFECTIVE)
+Proposed Threshold Cap: 56
+Notes: Reviewed by K. Lindqvist for EU-West.

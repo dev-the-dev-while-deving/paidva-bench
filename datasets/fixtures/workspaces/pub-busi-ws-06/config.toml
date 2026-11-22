@@ -1,0 +1,6 @@
+# Operational Configuration — REV-2026-366
+organization = "CloudPulse Analytics"
+region = "US-East"
+effective_threshold_cap = 36
+adjustment_rate_pct = 5.28
+audit_mode = "strict"

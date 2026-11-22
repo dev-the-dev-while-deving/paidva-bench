@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2024-530
+Status: SIGNED AND EFFECTIVE
+Proposed Threshold Cap: 79
+Notes: Reviewed by S. Nakamura for Nordics.

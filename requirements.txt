@@ -1,0 +1,4 @@
+# Core bench.py runner, grader, and reporter use Python 3.9+ standard library only.
+# Optional dependencies below are only needed if regenerating datasets with scripts/gen_suite.py:
+numpy>=1.24
+scipy>=1.10

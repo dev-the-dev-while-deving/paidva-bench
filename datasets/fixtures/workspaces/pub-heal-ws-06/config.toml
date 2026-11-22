@@ -1,0 +1,6 @@
+# Operational Configuration — REV-2025-295
+organization = "MedCore Trial Group"
+region = "US-East"
+effective_threshold_cap = 100
+adjustment_rate_pct = 2.58
+audit_mode = "strict"

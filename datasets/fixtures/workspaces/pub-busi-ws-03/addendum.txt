@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2024-441
+Status: SIGNED AND EFFECTIVE
+Proposed Threshold Cap: 68
+Notes: Reviewed by T. Chen for APAC-South.

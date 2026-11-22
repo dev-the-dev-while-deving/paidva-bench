@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2026-717
+Status: SIGNED AND EFFECTIVE
+Proposed Threshold Cap: 27
+Notes: Reviewed by M. Alvarez for CA-Central.

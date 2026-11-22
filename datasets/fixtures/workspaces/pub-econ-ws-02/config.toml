@@ -1,0 +1,6 @@
+# Operational Configuration — REV-2025-305
+organization = "CivicEcon Institute"
+region = "Nordics"
+effective_threshold_cap = 72
+adjustment_rate_pct = 4.42
+audit_mode = "strict"

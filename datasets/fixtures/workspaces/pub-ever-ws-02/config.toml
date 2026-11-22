@@ -1,0 +1,6 @@
+# Operational Configuration — REV-2025-502
+organization = "ConsumerCheck Lab"
+region = "CA-Central"
+effective_threshold_cap = 33
+adjustment_rate_pct = 6.66
+audit_mode = "strict"

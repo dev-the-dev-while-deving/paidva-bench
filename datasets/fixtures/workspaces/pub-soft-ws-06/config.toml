@@ -1,0 +1,6 @@
+# Operational Configuration — REV-2025-396
+organization = "CoreInfra Systems"
+region = "APAC-South"
+effective_threshold_cap = 67
+adjustment_rate_pct = 6.6
+audit_mode = "strict"

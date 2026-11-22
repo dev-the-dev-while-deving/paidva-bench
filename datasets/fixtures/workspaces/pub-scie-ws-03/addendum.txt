@@ -1,0 +1,4 @@
+ADDENDUM FOR REV-2026-802
+Status: DRAFT — UNSIGNED (NOT EFFECTIVE)
+Proposed Threshold Cap: 61
+Notes: Reviewed by K. Lindqvist for Nordics.
